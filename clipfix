@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+
+################################################################################
+# clipfix - Destructively change clip styles to properties in svg files in cwd.
+# Copyright 2009 Rob Myers <rob@robmyers.org>
+# Licensed under the GNU GPL Version 3 or, at your option, any later version.
+################################################################################
+
+
+################################################################################
+# Requires
+################################################################################
+
+require 'ftools'
+require 'find' 
+
+
+################################################################################
+# Functions
+################################################################################
+
+# Destructively move the clip-path tag from the style to its own property 
+#   as Inkscape doesn't like it as a style element.
+
+def clipfix_file(filename)
+  output = File.open("#{filename}.new", 'w')
+  input = File.open(filename)
+  
+  input.each do |line|
+    # Assumes each sytle property begins and ends on the same line
+    #   which seems to be the case for Inkscape.
+    output.puts(line.gsub(/style="(.*)clip-path:(.+?);(.*)"/, 
+                          'clip-path="\2" style="\1\3"'))
+  end
+    
+  input.close()
+  output.close()
+  
+  #File.move(filename, "#{filename}.old")
+  File.move("#{filename}.new", filename)
+end
+
+
+################################################################################
+# Main flow of control
+################################################################################
+
+# Make sure the user really wants to do this
+
+puts("Really destructively move clip-path from style to property in all svg files in this directory? [y/N]")
+answer=gets().chomp()
+unless(answer.casecmp("y") == 0)
+  puts("Not converting.")
+  exit(0)
+end
+
+# Destructively convert all svg files in the current working directory
+
+Dir.glob("./*.svg") do |filename|
+  puts("clipfixing #{filename}")
+  clipfix_file(filename)
+end
