@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+################################################################################
+# bysa - Set the licence of a file or files to CC-BY-SA
+# Copyright 2009 Rob Myers <rob@robmyers.org>
+# Licensed under the GNU GPL Version 3 or, at your option, any later version.
+################################################################################
+
+
+################################################################################
+# Requires
+################################################################################
+
+require 'liblicense'
+
+
+################################################################################
+# The licence url
+################################################################################
+
+licence = 'http://creativecommons.org/licenses/by-sa/3.0'
+
+if(! liblicense.verify_uri (license))
+  puts("Not a valid CC licence URL: #{licence}")
+  exit(2)
+end
+
+
+################################################################################
+# Set the licence(s)
+################################################################################
+
+if(! $1)
+  puts("bysa filename|wildcard")
+  exit(1)
+end
+
+Dir.glob($1) do |filename|
+  puts("Applying by-sa to #{filename}")
+  liblicense.write(file, licence)
+end
