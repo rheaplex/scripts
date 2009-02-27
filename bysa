@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/bin/bash
 
 ################################################################################
 # bysa - Set the licence of a file or files to CC-BY-SA
@@ -8,34 +8,22 @@
 
 
 ################################################################################
-# Requires
-################################################################################
-
-require 'liblicense'
-
-
-################################################################################
 # The licence url
 ################################################################################
 
-licence = 'http://creativecommons.org/licenses/by-sa/3.0'
-
-if(! liblicense.verify_uri (license))
-  puts("Not a valid CC licence URL: #{licence}")
-  exit(2)
-end
+LICENCE='http://creativecommons.org/licenses/by-sa/3.0'
 
 
 ################################################################################
 # Set the licence(s)
 ################################################################################
 
-if(! $1)
-  puts("bysa filename|wildcard")
-  exit(1)
-end
+if [ ! $1 ] ; then
+  echo "bysa filename|wildcard"
+  exit 1
+fi
 
-Dir.glob($1) do |filename|
-  puts("Applying by-sa to #{filename}")
-  liblicense.write(file, licence)
-end
+for FILE in $1; do
+  echo Applying by-sa to $FILE
+  `LD_LIBRARY_PATH=/usr/local/lib/ license --license $LICENCE "$FILE"`
+done
