@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]
+then
+	echo "Please pass names of files to check on the command line."
+	exit 1
+fi
+
+# Get the args
+declare -a ESSAYS=("$@")
+
+echo "weasel words: "
+weasel-words ${ESSAYS[@]}
+echo
+echo "passive voice: "
+passive-voice ${ESSAYS[@]}
+echo
+echo "duplicates: "
+lexical-illusions ${ESSAYS[@]}
