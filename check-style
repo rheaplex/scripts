@@ -17,3 +17,6 @@ passive-voice ${ESSAYS[@]}
 echo
 echo "duplicates: "
 lexical-illusions ${ESSAYS[@]}
+echo
+echo "artbollocks: "
+artbollocks ${ESSAYS[@]}
