@@ -22,16 +22,21 @@
 
 BOLLOCKS="\
 affirmation|affirm|affirms|aporia|aporetic|appropriates|appropriation|\
-archetypical|archetype|archetypes|\
+archetypical|archetype|archetypes|autonomous|autonomy|\
+baudrillardian|\
 commodification|\
 committed|commitment|convention|conventional|conventions|cunning|cunningly|\
-deconstruct|deconstruction|deconstructs|desire|desires|disrupt|disrupts|\
+death of the author|\
+deconstruct|deconstruction|deconstructs|deleuzian|desire|desires|\
+disrupt|disrupts|\
 engage|engagement|engages|\
 gaze|gender|\
 identity|identity politics|\
-interrogate|interrogates|interrogation|intensifies|intensify|intensifying|\
+intensifies|intensify|intensifying|interrogate|interrogates|interrogation|\
+intertextual|intertextuality|\
+juxtapose|juxtaposes|juxtaposition|\
 lack|locus|\
-matrix|mocking|mockingly|myth|mythologies|mythology|myths|\
+matrix|mocking|mockingly|modalities|modality|myth|mythologies|mythology|myths|\
 narrative|narrativisation|narrativization|narrativity|nexus|nodal|node|\
 normative|normativity|notion|notions|\
 objective|objectivity|objectivities|operate|operates|\
@@ -41,16 +46,17 @@ reading|relation|relational|representation|representations|rhizome|\
 situate|situated|situates|\
 stereotype|stereotypes|strategy|strategies|\
 subjective|subjectivity|subjectivities|subvert|subversion|subverts|\
-text|textual|textuality|trajectory|\
+text|textual|textuality|thinker|thinkers|trajectory|\
 transgress|transgresses|transgression|transgressive|\
 unfolding|undermine|undermining|undermines|\
-work|works|wry|wryly"
+work|works|wry|wryly|\
+zizekian|zižekian"
 
 if [ $# = 0 ]; then
  echo "usage: $(basename $0) <file> ..."
  exit 1
 fi
 
-egrep -n -i --color "\\b(${BOLLOCKS})\\b" $*
+egrep --line-number --ignore-case --color "\\b(${BOLLOCKS})\\b" $*
 
 exit $?
