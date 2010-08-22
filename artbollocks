@@ -21,28 +21,42 @@
 # THE SOFTWARE.
 
 BOLLOCKS="\
+a priori|ad hoc|\
 affirmation|affirm|affirms|aporia|aporetic|appropriates|appropriation|\
-archetypical|archetype|archetypes|autonomous|autonomy|\
-baudrillardian|\
-commodification|\
-committed|commitment|convention|conventional|conventions|cunning|cunningly|\
-death of the author|\
+archetypal|archetypical|archetype|archetypes|autonomous|autonomy|\
+baudrillardian|baudrillarian|\
+commodification|committed|commitment|commonalities|contemporaneity|\
+context|contexts|contextual|contextualise|contextualises|contextualisation|\
+contextialize|contextializes|contextualization|\
+convention|conventional|conventions|coterminous|critique|cunning|cunningly|\
+death of the author|debunk|debunked|debunking|debunks|\
 deconstruct|deconstruction|deconstructs|deleuzian|desire|desires|\
-disrupt|disrupts|\
-engage|engagement|engages|\
-gaze|gender|\
+discourse|discursive|disrupt|disrupts|\
+engage|engagement|engages|episteme|epistemic|ergo|\
+fetish|fetishes|fetishise|fetishised|fetishize|fetishized|\
+gaze|gender|gendered|\
+historicise|historicisation|historicize|historicization|hegemonic|hegemony|\
 identity|identity politics|\
 intensifies|intensify|intensifying|interrogate|interrogates|interrogation|\
 intertextual|intertextuality|\
-juxtapose|juxtaposes|juxtaposition|\
-lack|locus|\
-matrix|mocking|mockingly|modalities|modality|myth|mythologies|mythology|myths|\
+irony|ironic|ironical|ironically|ironisation|ironization|ironises|ironizes|\
+jouissance|juxtapose|juxtaposes|juxtaposition|\
+lacanian|lack|loci|locus|locuses|\
+matrix|mocking|mockingly|modalities|modality|\
+myth|mythologies|mythology|myths|\
 narrative|narrativisation|narrativization|narrativity|nexus|nodal|node|\
 normative|normativity|notion|notions|\
-objective|objectivity|objectivities|operate|operates|\
-parody|parodic|parodies|plenitude|popular notions|practice|practise|\
-problematic|problematics|\
-reading|relation|relational|representation|representations|rhizome|\
+objective|objectivity|objectivities|objet petit a|ontology|ontological|\
+operate|operates|\
+otherness|othering|\
+paradigm|paradigmatic|paradigms|parody|parodic|parodies|physicality|\
+plenitude|poetics|popular notions|position|post hoc|\
+postmodern|postmodernist|postmodernity|\
+practice|practise|praxis|\
+problematic|problematics|proposition|\
+qua|\
+reading|readings|reification|relation|relational|relationality|relations|\
+representation|representations|rhizomatic|rhizome|\
 situate|situated|situates|\
 stereotype|stereotypes|strategy|strategies|\
 subjective|subjectivity|subjectivities|subvert|subversion|subverts|\
